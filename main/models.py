@@ -37,8 +37,13 @@ class Brand(models.Model):
     class Meta:
         verbose_name_plural='3. Brands'
 
+    def image_tag(self):
+        return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
+
     def __str__(self):
         return self.title
+    
+
 
 # Color
 class Color(models.Model):
@@ -63,6 +68,17 @@ class Size(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Quantity(models.Model):
+    title=models.CharField(max_length=100,null=True,blank=True)
+
+    class Meta:
+        verbose_name_plural='5. Sizes'
+
+    def __str__(self):
+        return self.title
+
+
 
 
 # Product Model
@@ -87,6 +103,7 @@ class ProductAttribute(models.Model):
     product=models.ForeignKey(Product,on_delete=models.CASCADE)
     color=models.ForeignKey(Color,on_delete=models.CASCADE)
     size=models.ForeignKey(Size,on_delete=models.CASCADE)
+    quantity=models.ForeignKey(Quantity,on_delete=models.CASCADE,null=True,blank=True)
     price=models.PositiveIntegerField(default=0)
     image=models.ImageField(upload_to="product/",null=True)
 

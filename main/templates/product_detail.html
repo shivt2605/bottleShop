@@ -31,7 +31,7 @@
 				</tr>
 				<tr>
 					<th>Price</th>
-					<th>$ <span class="product-price-{{data.id}}">{{data.productattribute_set.first.price}}</span></th>
+					<th>₹ <span class="product-price-{{data.id}}">{{data.productattribute_set.first.price}}</span></th>
 				</tr>
 			</table>
 			<hr/>
@@ -87,7 +87,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	      	<form method="post" id="addForm" action="{% url 'save-review' data.id %}">
+	      	<form method="post" id="addForm" action="">
 	      		{% csrf_token %}
 		      	<table class="table table-bordered">
 		      		{{reviewForm.as_table}}

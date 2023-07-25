@@ -1,7 +1,11 @@
 from django.contrib import admin
 from .models import *
 # admin.site.register(Banner)
-admin.site.register(Brand)
+
+
+class BrandAdmin(admin.ModelAdmin):
+	list_display=('id','title','image_tag')
+admin.site.register(Brand,BrandAdmin)
 admin.site.register(Size)
 
 
@@ -22,13 +26,16 @@ class BannerAdmin(admin.ModelAdmin):
 admin.site.register(Banner,BannerAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
-	list_display=('title','image_tag')
+	list_display=('id','title','image_tag')
 admin.site.register(Category,CategoryAdmin)
 
 class ColorAdmin(admin.ModelAdmin):
-	list_display=('title','color_bg')
+	list_display=('id','title',)
 admin.site.register(Color,ColorAdmin)
 
+class QuantityAdmin(admin.ModelAdmin):
+	list_display=('id','title',)
+admin.site.register(Quantity,QuantityAdmin)
 
 
 # Product Attribute
