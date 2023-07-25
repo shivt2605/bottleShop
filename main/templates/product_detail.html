@@ -87,7 +87,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	      	<form method="post" id="addForm" action="">
+	      	<form method="post" id="addForm" action="{% url 'save-review' data.id %}">
 	      		{% csrf_token %}
 		      	<table class="table table-bordered">
 		      		{{reviewForm.as_table}}
@@ -137,7 +137,7 @@
 		{% for product in related %}
 		<div class="col-lg-3 col-sm-4 mb-4">
 			<div class="card shadow">
-			  <a href="/product/{{product.slug}}/{{product.id}}"><img src="/media/{{product.productattribute_set.first.image}}" class="card-img-top" alt="{{product.title}}"></a>
+			  <a href="/product/{{product.slug}}/{{product.id}}"><img src="/media/{{product.productattribute_set.first.image}}" style="height: 200px;" class="card-img-top" alt="{{product.title}}"></a>
 			  <div class="card-body">
 			    <h6 class="card-text"><a href="/product/{{product.slug}}/{{product.id}}">{{product.title}}</a></h6>
 			  </div>
