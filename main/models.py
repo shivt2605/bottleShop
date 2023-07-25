@@ -3,7 +3,7 @@ from django.utils.html import mark_safe
 from django.contrib.auth.models import User
 # Banner
 class Banner(models.Model):
-    img=models.ImageField(upload_to="banner/")
+    img=models.ImageField(upload_to="banner")
     alt_text=models.CharField(max_length=300)
 
     class Meta:
