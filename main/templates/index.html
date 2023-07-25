@@ -19,7 +19,7 @@
       {% else %}
       <div class="carousel-item">
       {% endif %}
-      <img src="/media/{{banner.img}}" style="height: 650px;" class="d-block w-100" alt="...">
+      <img src="/media/{{banner.img}}" class="d-block w-100" alt="...">
     </div>
     {% endfor %}
   </div>
@@ -40,7 +40,7 @@
     {% for product in data %}
 		<div class="col-md-3 mb-4">
 			<div class="card shadow">
-			  <a href="/product/{{product.slug}}/{{product.id}}"><img src="/media/{{product.productattribute_set.first.image}}" style="height: 175px;" class="card-img-top" alt="{{product.title}}"></a>
+			  <a href="/product/{{product.slug}}/{{product.id}}"><img src="/media/{{product.productattribute_set.first.image}}" style="height: 225px;" class="card-img-top" alt="{{product.title}}"></a>
 			  <div class="card-body">
 			    <h5 class="card-text"><a href="/product/{{product.slug}}/{{product.id}}">{{product.title}}</a></h5>
           <h6>₹ <span class="product-price-{{product.id}}">{{product.productattribute_set.first.price}}</span></h6>

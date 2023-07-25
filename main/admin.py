@@ -30,7 +30,7 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category,CategoryAdmin)
 
 class ColorAdmin(admin.ModelAdmin):
-	list_display=('id','title',)
+	list_display=('id','title','color_bg')
 admin.site.register(Color,ColorAdmin)
 
 class QuantityAdmin(admin.ModelAdmin):

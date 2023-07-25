@@ -73,7 +73,7 @@ class Quantity(models.Model):
     title=models.CharField(max_length=100,null=True,blank=True)
 
     class Meta:
-        verbose_name_plural='5. Sizes'
+        verbose_name_plural='5. Quantity'
 
     def __str__(self):
         return self.title
